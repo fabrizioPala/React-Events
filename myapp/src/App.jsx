@@ -1,9 +1,18 @@
-import { HelloWorld } from "./HelloWorld";
-import { Welcome } from "./Welcome";
-export function App(){
+// App.jsx
+import React from 'react';
+import { Welcome } from './Welcome';
+import { AllarmClock } from './AlarmClock'; // Corrected import path
+
+export function App() {
+    function handleButtonClick() {
+        const now = new Date();
+        alert(`The current time is ${now.toLocaleTimeString()}`);
+    }
+
     return (
         <div>
-            <Welcome name="Jhon" age={17}/>
+            <Welcome name="John" age={17} />
+            <AllarmClock onButtonClick={handleButtonClick} />
         </div>
-    )
+    );
 }
